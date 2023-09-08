@@ -1,2 +1,1 @@
-# Lap 3 Client
-## To do App
+# Lap 3 Client - To do list App
