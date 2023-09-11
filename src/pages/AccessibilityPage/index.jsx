@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 export default function AccessibilityPage() {
   const [bgColor, setBgColor] = useState('#ffffff')
+  const [spacing, setSpacing] = useState('1.5px')
 
   useEffect(() => {
     document.body.style.backgroundColor = bgColor
+    document.body.style.letterSpacing = spacing
   }, [])
 
   const handleColourChange = (e) => {
@@ -12,8 +14,51 @@ export default function AccessibilityPage() {
     document.body.style.backgroundColor = e.target.value
   }
 
+  const handleSpacingChange = (e) => {
+    setSpacing(e.target.value)
+    document.body.style.letterSpacing = e.target.value
+  }
+
   return (
     <>
+      <div>
+        <h3>Change letter spacing</h3>
+        <p> something in this paragraph, there is a lot of text</p>
+        <p>something else in this paragraph, even more text</p>
+        <p>All this text is to check whether the spacing changes or not</p>
+
+        <div>
+          <input 
+            type="radio" 
+            id="1.5"
+            name= 'letter-spacing'
+            value="1.5px"
+            checked={spacing === '1.5px'}
+            onChange={handleSpacingChange}/>
+          <label htmlFor="1.5 spacing"> 1.5pts </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio" 
+            id="2"
+            name= 'letter-spacing'
+            value="2px"
+            onChange={handleSpacingChange}/>
+          <label htmlFor="2 spacing"> 2pts </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio" 
+            id="2.5"
+            name= 'letter-spacing'
+            value="2.5px"
+            onChange={handleSpacingChange}/>
+          <label htmlFor="2.5 spacing"> 2.5pts </label>
+        </div>
+      </div>
+
       <div>
         <p> Change the background colour </p>
 
