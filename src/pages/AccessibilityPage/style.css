@@ -1,0 +1,28 @@
+#accessibility-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 77vw;
+    height: 100%;
+}
+
+#title {
+    grid-column: span 2;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left: 70px;
+}
+
+#font-size,
+#line-height,
+#letter-spacing,
+#bg-color {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding-left: 70px; 
+  padding-top: 70px;
+}
