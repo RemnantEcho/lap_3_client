@@ -1,22 +1,31 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom';
-const styles = ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none'});
+import './style.css'
 
 export default function NavBar() {
+  const styles = ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' });
   return (
     <>
-        <header>
-            <nav>
-                <NavLink to="/" style={styles}>Home</NavLink>
-                <NavLink to='/calendar' style={styles}> Calendar </NavLink>
-                <NavLink to='/progress' style={styles}> Progress </NavLink>
-                <NavLink to='/accessibility' style={styles}> Accessibility </NavLink>
-                <NavLink to='/login' style={styles}>Login</NavLink>
-                <NavLink to='/signup' style={styles}>Sign up</NavLink>
-            </nav>
-        </header>
-            <Outlet />
+      <header>
+        <nav className='navbar-container'>
+          <div id='logo-container'>
+          <img src="./logo.png" alt="Logo" />
+          </div>
+
+          <div id='top-links-container'>
+            <NavLink to="/" style={styles}>Home</NavLink>
+            <NavLink to='/calendar' style={styles}> Calendar </NavLink>
+            <NavLink to='/progress' style={styles}> Progress </NavLink>
+            <NavLink to='/accessibility' style={styles}> Accessibility </NavLink>
+          </div>
+
+          <div id='bottom-links-container'>
+            <NavLink to='/login' style={styles}>Login</NavLink>
+            <NavLink to='/signup' style={styles}>Sign up</NavLink>
+          </div>
+        </nav>
+      </header>
+      <Outlet />
     </>
-    
   )
 }
