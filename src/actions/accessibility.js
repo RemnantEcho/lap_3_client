@@ -17,3 +17,12 @@ export const setLetterSpacing = (spacing) => {
     }
 }
 
+export const setLineSpacing = (lineSpacing) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'SET_LINE_SPACING',
+            payload: lineSpacing
+        })
+    }
+}
+

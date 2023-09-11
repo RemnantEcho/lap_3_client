@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/accessibility';
 
 export default function AccessibilityPage() {
-  const { bgColor, spacing } = useSelector((state) => state.accessibility);
+  const { bgColor, spacing, lineSpacing } = useSelector((state) => state.accessibility);
   const dispatch = useDispatch();
   
   // console.log('line 6', bgColor)
-  console.log('line 10', spacing)
+  // console.log('line 10', spacing)
   
   const handleBgChange = (color) => {
     dispatch(actions.setBgColor(color));
@@ -18,15 +18,57 @@ export default function AccessibilityPage() {
     dispatch(actions.setLetterSpacing(spacing));
   };
 
+  const handleLineHeightChange = (lineSpacing) => {
+    dispatch(actions.setLineSpacing(lineSpacing));
+  }
+
   useEffect(() => {
     // console.log('bgColor changed to:', bgColor);
     document.body.style.backgroundColor = bgColor;
     document.body.style.letterSpacing = spacing;
-  }, [bgColor, spacing]);
+    document.body.style.lineHeight = lineSpacing;
+  }, [bgColor, spacing, lineSpacing]);
   
 
   return (
     <>
+
+      <div>
+        <p style={{ lineHeight: lineSpacing }}>change line height</p>
+        <div>
+          <input 
+            type="radio"
+            id='12px'
+            name='line-height'
+            value='12pt'
+            checked={lineSpacing === '12pt'}
+            onChange={() => handleLineHeightChange('12pt')}/>
+            <label htmlFor="12 height"> 12pt </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio"
+            id='15pt'
+            name='line-height'
+            value='15pt'
+            checked={lineSpacing === '15pt'}
+            onChange={() => handleLineHeightChange('15pt')}/>
+            <label htmlFor="15 height"> 15pt </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio"
+            id='18pt'
+            name='line-height'
+            value='18pt'
+            checked={lineSpacing === '18pt'}
+            onChange={() => handleLineHeightChange('18pt')}/>
+            <label htmlFor="18 height"> 18pt </label>
+        </div>
+      </div>
+  
       <div>
         <h3>Change letter spacing</h3>
         <p style={{ letterSpacing: spacing }}>
@@ -41,7 +83,7 @@ export default function AccessibilityPage() {
             checked={spacing === '1.5px'}
             onChange={() => handleSpacingChange('1.5px')}
           />
-          <label htmlFor="1.5 spacing"> 1.5pts </label>
+          <label htmlFor="1.5 spacing"> 1.5px </label>
         </div>
 
         <div>
@@ -53,7 +95,7 @@ export default function AccessibilityPage() {
             checked={spacing === '2px'}
             onChange={() => handleSpacingChange('2px')}
           />
-          <label htmlFor="2 spacing"> 2pts </label>
+          <label htmlFor="2 spacing"> 2px </label>
         </div>
 
         <div>
@@ -65,7 +107,7 @@ export default function AccessibilityPage() {
             checked={spacing === '2.5px'}
             onChange={() => handleSpacingChange('2.5px')}
           />
-          <label htmlFor="2.5 spacing"> 2.5pts </label>
+          <label htmlFor="2.5 spacing"> 2.5px </label>
         </div>
       </div>
 
