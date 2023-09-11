@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom';
 const styles = ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none'});
 
-export default function Header() {
+export default function NavBar() {
   return (
     <>
         <header>
