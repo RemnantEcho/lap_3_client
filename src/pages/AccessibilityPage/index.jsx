@@ -1,75 +1,86 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../actions/accessibility';
 
 export default function AccessibilityPage() {
-  const [bgColor, setBgColor] = useState('#ffffff')
-  const [spacing, setSpacing] = useState('1.5px')
+  const { bgColor, spacing } = useSelector((state) => state.accessibility);
+  const dispatch = useDispatch();
+  
+  // console.log('line 6', bgColor)
+  console.log('line 10', spacing)
+  
+  const handleBgChange = (color) => {
+    dispatch(actions.setBgColor(color));
+    // console.log('line11', bgColor)
+  };
+
+  const handleSpacingChange = (spacing) => {
+    dispatch(actions.setLetterSpacing(spacing));
+  };
 
   useEffect(() => {
-    document.body.style.backgroundColor = bgColor
-    document.body.style.letterSpacing = spacing
-  }, [])
-
-  const handleColourChange = (e) => {
-    setBgColor(e.target.value)
-    document.body.style.backgroundColor = e.target.value
-  }
-
-  const handleSpacingChange = (e) => {
-    setSpacing(e.target.value)
-    document.body.style.letterSpacing = e.target.value
-  }
+    // console.log('bgColor changed to:', bgColor);
+    document.body.style.backgroundColor = bgColor;
+    document.body.style.letterSpacing = spacing;
+  }, [bgColor, spacing]);
+  
 
   return (
     <>
       <div>
         <h3>Change letter spacing</h3>
-        <p> something in this paragraph, there is a lot of text</p>
-        <p>something else in this paragraph, even more text</p>
-        <p>All this text is to check whether the spacing changes or not</p>
-
+        <p style={{ letterSpacing: spacing }}>
+          Something in this paragraph, there is a lot of text
+        </p>
         <div>
-          <input 
-            type="radio" 
+          <input
+            type="radio"
             id="1.5"
-            name= 'letter-spacing'
+            name="letter-spacing"
             value="1.5px"
             checked={spacing === '1.5px'}
-            onChange={handleSpacingChange}/>
+            onChange={() => handleSpacingChange('1.5px')}
+          />
           <label htmlFor="1.5 spacing"> 1.5pts </label>
         </div>
 
         <div>
-          <input 
-            type="radio" 
+          <input
+            type="radio"
             id="2"
-            name= 'letter-spacing'
+            name="letter-spacing"
             value="2px"
-            onChange={handleSpacingChange}/>
+            checked={spacing === '2px'}
+            onChange={() => handleSpacingChange('2px')}
+          />
           <label htmlFor="2 spacing"> 2pts </label>
         </div>
 
         <div>
-          <input 
-            type="radio" 
+          <input
+            type="radio"
             id="2.5"
-            name= 'letter-spacing'
+            name="letter-spacing"
             value="2.5px"
-            onChange={handleSpacingChange}/>
+            checked={spacing === '2.5px'}
+            onChange={() => handleSpacingChange('2.5px')}
+          />
           <label htmlFor="2.5 spacing"> 2.5pts </label>
         </div>
       </div>
 
       <div>
-        <p> Change the background colour </p>
+        <p>Change the background color</p>
 
         <div>
           <input
             type="radio"
             id="color-white"
-            name="backgorund-color"
+            name="background-color"
             value="#ffffff"
             checked={bgColor === '#ffffff'}
-            onChange={handleColourChange} />
+            onChange={() => handleBgChange('#ffffff')}
+          />
           <label htmlFor="color-white"> White </label>
         </div>
 
@@ -77,9 +88,11 @@ export default function AccessibilityPage() {
           <input
             type="radio"
             id="color-blue"
-            name="backgorund-color"
+            name="background-color"
             value="#98d6fd"
-            onChange={handleColourChange} />
+            checked={bgColor === '#98d6fd'}
+            onChange={() => handleBgChange('#98d6fd')}
+          />
           <label htmlFor="color-blue"> Blue </label>
         </div>
 
@@ -87,9 +100,11 @@ export default function AccessibilityPage() {
           <input
             type="radio"
             id="color-yellow"
-            name="backgorund-color"
+            name="background-color"
             value="#F8FF71"
-            onChange={handleColourChange} />
+            checked={bgColor === '#F8FF71'}
+            onChange={() => handleBgChange('#F8FF71')}
+          />
           <label htmlFor="color-yellow"> Yellow </label>
         </div>
 
@@ -97,9 +112,11 @@ export default function AccessibilityPage() {
           <input
             type="radio"
             id="color-green"
-            name="backgorund-color"
+            name="background-color"
             value="#ACFF7D"
-            onChange={handleColourChange} />
+            checked={bgColor === '#ACFF7D'}
+            onChange={() => handleBgChange('#ACFF7D')}
+          />
           <label htmlFor="color-green"> Green </label>
         </div>
 
@@ -107,9 +124,11 @@ export default function AccessibilityPage() {
           <input
             type="radio"
             id="color-pink"
-            name="backgorund-color"
+            name="background-color"
             value="#FEB0D8"
-            onChange={handleColourChange} />
+            checked={bgColor === '#FEB0D8'}
+            onChange={() => handleBgChange('#FEB0D8')}
+          />
           <label htmlFor="color-pink"> Pink </label>
         </div>
 
@@ -117,12 +136,15 @@ export default function AccessibilityPage() {
           <input
             type="radio"
             id="color-orange"
-            name="backgorund-color"
+            name="background-color"
             value="#FFBF74"
-            onChange={handleColourChange} />
+            checked={bgColor === '#FFBF74'}
+            onChange={() => handleBgChange('#FFBF74')}
+          />
           <label htmlFor="color-orange"> Orange </label>
         </div>
       </div>
     </>
-  )
+  );
 }
+
