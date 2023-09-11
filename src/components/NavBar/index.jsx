@@ -8,8 +8,9 @@ export default function NavBar() {
     <>
       <header>
         <nav className='navbar-container'>
+          
           <div id='logo-container'>
-          <img src="./logo.png" alt="Logo" />
+            <img src="./logo.png" alt="Logo" />
           </div>
 
           <div id='top-links-container'>
