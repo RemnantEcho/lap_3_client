@@ -3,15 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/accessibility';
 
 export default function AccessibilityPage() {
-  const { bgColor, spacing, lineSpacing } = useSelector((state) => state.accessibility);
+  const { bgColor, spacing, lineSpacing, size } = useSelector((state) => state.accessibility);
   const dispatch = useDispatch();
-  
-  // console.log('line 6', bgColor)
-  // console.log('line 10', spacing)
   
   const handleBgChange = (color) => {
     dispatch(actions.setBgColor(color));
-    // console.log('line11', bgColor)
   };
 
   const handleSpacingChange = (spacing) => {
@@ -22,16 +18,56 @@ export default function AccessibilityPage() {
     dispatch(actions.setLineSpacing(lineSpacing));
   }
 
+  const handleFontSizeChange = (size) => {
+    dispatch(actions.setFontSize(size))
+  }
+
   useEffect(() => {
-    // console.log('bgColor changed to:', bgColor);
     document.body.style.backgroundColor = bgColor;
     document.body.style.letterSpacing = spacing;
     document.body.style.lineHeight = lineSpacing;
-  }, [bgColor, spacing, lineSpacing]);
+    document.body.style.fontSize = size;
+  }, [bgColor, spacing, lineSpacing, size]);
   
 
   return (
     <>
+
+      <div>
+        <p style={{ fontSize: size }}> change font size </p>
+        <div>
+          <input 
+            type="radio"
+            id='20px'
+            name='font-size'
+            value='20px'
+            checked={size === '20px'}
+            onChange={() => handleFontSizeChange('20px')}/>
+          <label htmlFor="20px font size"> small </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio"
+            id='22px'
+            name='font-size'
+            value='22px'
+            checked={size === '22px'}
+            onChange={() => handleFontSizeChange('22px')}/>
+          <label htmlFor="22px font size"> medium </label>
+        </div>
+
+        <div>
+          <input 
+            type="radio"
+            id='25px'
+            name='font-size'
+            value='25px'
+            checked={size === '25px'}
+            onChange={() => handleFontSizeChange('25px')}/>
+          <label htmlFor="25px font size"> large </label>
+        </div>
+      </div>
 
       <div>
         <p style={{ lineHeight: lineSpacing }}>change line height</p>
@@ -43,7 +79,7 @@ export default function AccessibilityPage() {
             value='12pt'
             checked={lineSpacing === '12pt'}
             onChange={() => handleLineHeightChange('12pt')}/>
-            <label htmlFor="12 height"> 12pt </label>
+          <label htmlFor="12 height"> 12pt </label>
         </div>
 
         <div>
@@ -54,7 +90,7 @@ export default function AccessibilityPage() {
             value='15pt'
             checked={lineSpacing === '15pt'}
             onChange={() => handleLineHeightChange('15pt')}/>
-            <label htmlFor="15 height"> 15pt </label>
+          <label htmlFor="15 height"> 15pt </label>
         </div>
 
         <div>
@@ -65,7 +101,7 @@ export default function AccessibilityPage() {
             value='18pt'
             checked={lineSpacing === '18pt'}
             onChange={() => handleLineHeightChange('18pt')}/>
-            <label htmlFor="18 height"> 18pt </label>
+          <label htmlFor="18 height"> 18pt </label>
         </div>
       </div>
   

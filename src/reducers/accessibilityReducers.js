@@ -1,7 +1,8 @@
 const initState = {
     bgColor: '#ffffff', 
     spacing: '1.5px', 
-    lineSpacing: '12pt'
+    lineSpacing: '12pt', 
+    size: '20px'
 }
 
 
@@ -13,7 +14,9 @@ export const accessibilityReducer = (state = initState, action) => {
         case 'SET_LETTER_SPACING':
             return {... state, spacing: action.payload};
         case 'SET_LINE_SPACING':
-            return {... state, lineSpacing: action.payload}
+            return {... state, lineSpacing: action.payload};
+        case 'SET_FONT_SIZE': 
+            return {... state, size: action.payload}
         default: 
             return state
     }

@@ -26,3 +26,12 @@ export const setLineSpacing = (lineSpacing) => {
     }
 }
 
+export const setFontSize = (size) => {
+    return (dispatch) => {
+        dispatch ({
+            type: 'SET_FONT_SIZE',
+            payload: size
+        })
+    }
+}
+
