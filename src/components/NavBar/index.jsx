@@ -8,11 +8,14 @@ export default function NavBar() {
         <header>
             <nav>
                 <NavLink to="/" style={styles}>Home</NavLink>
+                <NavLink to='/calendar'> Calendar </NavLink>
+                <NavLink to='/progress'> Progress </NavLink>
+                <NavLink to='/accessibility'> Accessibility </NavLink>
+                <NavLink to='/login'>Login</NavLink>
+                <NavLink to='/signup'>Sign up</NavLink>
             </nav>
         </header>
-        <main>
             <Outlet />
-        </main>
     </>
     
   )
