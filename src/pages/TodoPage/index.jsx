@@ -1,10 +1,11 @@
 import React from 'react';
-import { Search } from '../../components'
+import { Search, ToDoCard } from '../../components'
 
 export default function TodoPage() {
   return (
     <>
       <Search />
+      <ToDoCard />
     </>
   )
 }
