@@ -1,0 +1,18 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75vw;
+    height: 100vh;
+}
+
+.btn-cont {
+    display: flex;
+    width: 40vw;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    width: 30%;
+}

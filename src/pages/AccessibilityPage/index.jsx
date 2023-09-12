@@ -44,34 +44,34 @@ export default function AccessibilityPage() {
           <div >
             <input
               type="radio"
-              id='20px'
+              id='1rem'
               name='font-size'
-              value='20px'
-              checked={size === '20px'}
-              onChange={() => handleFontSizeChange('20px')} />
-            <label htmlFor="20px font size"> small </label>
+              value='1rem'
+              checked={size === '1rem'}
+              onChange={() => handleFontSizeChange('1rem')} />
+            <label htmlFor="1rem font size"> Small </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id='22px'
+              id='1.25rem'
               name='font-size'
-              value='22px'
-              checked={size === '22px'}
-              onChange={() => handleFontSizeChange('22px')} />
-            <label htmlFor="22px font size"> medium </label>
+              value='1.25rem'
+              checked={size === '1.25rem'}
+              onChange={() => handleFontSizeChange('1.25rem')} />
+            <label htmlFor="1.25rem font size"> Medium </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id='25px'
+              id='1.5rem'
               name='font-size'
-              value='25px'
-              checked={size === '25px'}
-              onChange={() => handleFontSizeChange('25px')} />
-            <label htmlFor="25px font size"> large </label>
+              value='1.5rem'
+              checked={size === '1.5rem'}
+              onChange={() => handleFontSizeChange('1.5rem')} />
+            <label htmlFor="1.5rem font size"> Large </label>
           </div>
         </div>
       </div>
@@ -83,34 +83,34 @@ export default function AccessibilityPage() {
           <div>
             <input
               type="radio"
-              id='20px'
+              id='1.5rem'
               name='line-height'
-              value='20pt'
-              checked={lineSpacing === '20pt'}
-              onChange={() => handleLineHeightChange('20pt')} />
-            <label htmlFor="20 height"> 20pt </label>
+              value='1.5rem'
+              checked={lineSpacing === '1.5rem'}
+              onChange={() => handleLineHeightChange('1.5rem')} />
+            <label htmlFor="1.5rem height"> Small </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id='22pt'
+              id='1.75rem'
               name='line-height'
-              value='22pt'
-              checked={lineSpacing === '22pt'}
-              onChange={() => handleLineHeightChange('22pt')} />
-            <label htmlFor="22 height"> 22pt </label>
+              value='1.75rem'
+              checked={lineSpacing === '1.75rem'}
+              onChange={() => handleLineHeightChange('1.75rem')} />
+            <label htmlFor="1.75rem height"> Medium </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id='25pt'
+              id='2rem'
               name='line-height'
-              value='25pt'
-              checked={lineSpacing === '25pt'}
-              onChange={() => handleLineHeightChange('25pt')} />
-            <label htmlFor="25 height"> 25pt </label>
+              value='2rem'
+              checked={lineSpacing === '2rem'}
+              onChange={() => handleLineHeightChange('2rem')} />
+            <label htmlFor="2rem height"> Large </label>
           </div>
         </div>
       </div>
@@ -122,37 +122,37 @@ export default function AccessibilityPage() {
           <div>
             <input
               type="radio"
-              id="1.5"
+              id="0.1rem"
               name="letter-spacing"
-              value="1.5px"
-              checked={spacing === '1.5px'}
-              onChange={() => handleSpacingChange('1.5px')}
+              value="0.1rem"
+              checked={spacing === '0.1rem'}
+              onChange={() => handleSpacingChange('0.1rem')}
             />
-            <label htmlFor="1.5 spacing"> 1.5px </label>
+            <label htmlFor="0.1 spacing"> Small </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id="2"
+              id="0.15rem"
               name="letter-spacing"
-              value="2px"
-              checked={spacing === '2px'}
-              onChange={() => handleSpacingChange('2px')}
+              value="0.15rem"
+              checked={spacing === '0.15rem'}
+              onChange={() => handleSpacingChange('0.15rem')}
             />
-            <label htmlFor="2 spacing"> 2px </label>
+            <label htmlFor="0.15 spacing"> Medium </label>
           </div>
 
           <div>
             <input
               type="radio"
-              id="2.5"
+              id="0.2rem"
               name="letter-spacing"
-              value="2.5px"
-              checked={spacing === '2.5px'}
-              onChange={() => handleSpacingChange('2.5px')}
+              value="0.2rem"
+              checked={spacing === '0.2rem'}
+              onChange={() => handleSpacingChange('0.2rem')}
             />
-            <label htmlFor="2.5 spacing"> 2.5px </label>
+            <label htmlFor="0.2 spacing"> Large </label>
           </div>
         </div>
       </div>

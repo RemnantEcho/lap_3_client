@@ -1,8 +1,8 @@
 const initState = {
     bgColor: '#ffffff', 
-    spacing: '1.5px', 
-    lineSpacing: '20pt', 
-    size: '20px'
+    spacing: '0.1rem', 
+    lineSpacing: '1.5rem', 
+    size: '1rem'
 }
 
 
