@@ -1,9 +1,13 @@
+* {
+    box-sizing: border-box;
+  }
+
 .navbar-container {
     background-color: beige;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 20vw;
+    width: 25vw;
     padding-left: 50px;
 }
 
@@ -11,19 +15,19 @@
     display: flex;
     flex-direction: column;
     /* background-color: aquamarine; */
-    height: 30vh;
-    justify-content: space-evenly;
+    height: 40vh;
+    justify-content: space-around;
     margin-top: 50px;
 }
 
 #bottom-links-container {
     display: flex;
     flex-direction: column;
-    /* background-color: beige; */
+    /* background-color: red; */
     margin-top: 100px;
     margin-bottom: 100px;
-    height: 15vh;
-    justify-content: space-evenly;
+    height: 20vh;
+    justify-content: space-around;
 }
 
 #logo-container {

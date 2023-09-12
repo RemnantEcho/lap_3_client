@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import './style.css'
 
 export default function NavBar() {
-  const styles = ({ isActive }) => ({ color: 'black', textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive? 'bold' : 'none' });
+  const styles = ({ isActive }) => ({ color: 'black', textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive? 'bold' : 'normal' });
   return (
     <>
       <header>
