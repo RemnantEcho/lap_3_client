@@ -40,13 +40,10 @@ const RegistrationForm = () => {
         });
       
 } 
-
-
-
     
   return (
     <div>
-      <h2>Registration</h2>
+      <h2 role="heading">Registration</h2>
       <form onSubmit={handleSubmit}>
       <div>
           <label>First Name:</label>
