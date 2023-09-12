@@ -5,10 +5,11 @@ export default function LoginPage() {
     <div id="form-container">
       <h2>Login</h2>
 
-      <form id="form">
+      <form id="login-form">
+      <input type="text" name="email" placeholder="Email" />
         <input type="text" id="username" name="username" placeholder="Username" />
         <input type="password" id="password" name="password" placeholder="Password" />
-        <input type="submit" value="Log In" id="login-btn" />
+        <input type="submit" value="Log In" class="login-btn" />
       </form>
 
       <div id="login">
