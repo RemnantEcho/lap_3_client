@@ -1,0 +1,30 @@
+#todo-page {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height: 100vh;
+}
+
+#todo-title {
+    display: flex;
+    font-size: 1.5rem;
+    /* background-color: aquamarine; */
+    align-items: center;
+    padding-left: 4rem;
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+#search {
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    align-items: center;
+}
+
+#card {
+    padding-left: 4rem;
+    padding-top: 5rem;
+}

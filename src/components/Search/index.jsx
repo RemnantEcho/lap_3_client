@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './style.css'
 
 function Search() {
     const [inputText, setInputText] = useState('');
@@ -53,7 +54,7 @@ function Search() {
     };
 
     return (
-        <>
+        <div children='search-cont'>
             <label>
                 <input
                     id="form"
@@ -70,14 +71,14 @@ function Search() {
                 <ul>
                     {finalResults.length > 0 ? (
                         finalResults.map((result, index) => (
-                            <li key={index}>{result.goal}</li>
+                            <li id='output' key={index}>{result.goal}</li>
                         ))
                     ) : (
                         <li>Nothing found</li>
                     )}
                 </ul>
             )}
-        </>
+        </div>
     );
 }
 
