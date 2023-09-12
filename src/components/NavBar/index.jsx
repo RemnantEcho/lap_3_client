@@ -13,7 +13,7 @@ export default function NavBar() {
             <img src="./logo.png" alt="Logo" />
           </div>
 
-          <div id='top-links-container'>
+          <div id='top-links-container'>  
             <NavLink to="/" style={styles}>Home</NavLink>
             <NavLink to='/calendar' style={styles}> Calendar </NavLink>
             <NavLink to='/progress' style={styles}> Progress </NavLink>

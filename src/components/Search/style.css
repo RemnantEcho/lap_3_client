@@ -1,0 +1,27 @@
+.search-cont {
+    display: flex;
+}
+
+#form {
+    height: 3.5rem;
+    width: 18rem;
+    background-color: #d0f8dc;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+#submit-btn {
+    height: 3.5rem;
+    width: 5rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    background-color: #60C77F;
+}
+
+#output {
+    list-style: none;
+}
