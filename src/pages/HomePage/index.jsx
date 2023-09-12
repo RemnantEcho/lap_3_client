@@ -1,11 +1,14 @@
 import React from 'react';
+import './style.css'
 
 export default function HomePage() {
   return (
-    <>
-    <h1>WElcome to the app</h1>
-    <button>Login</button>
-    <button>Sign Up</button>
-    </>
+    <div className='home-page'>
+    <h1>Welcome to the app</h1>
+    <div className='btn-cont'>
+      <button>Login</button>
+      <button>Sign Up</button>
+    </div>
+    </div>
   )
 }
