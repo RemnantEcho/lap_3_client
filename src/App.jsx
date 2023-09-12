@@ -17,7 +17,7 @@ function App() {
         <Route path="/progress" element={<Pages.ProgressPage />}/>
         <Route path="/signup" element={<Pages.SignupPage />}/>
         <Route path="/todo" element={<Pages.TodoPage />}/>
-        <Route path="/todo/:id" element={<Pages.TodoPage />}/>
+        <Route path="/todo/:date" element={<Pages.TodoPage />}/>
         <Route path="*" element={<Pages.NotFoundPage />}/>
       </Route>
     </Routes>
