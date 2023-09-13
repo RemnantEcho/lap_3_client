@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function StudentHome() {
+export default function GuestHomePage() {
   return (
     <div className='home-page'>
       <h1>Welcome to the app</h1>
