@@ -5,7 +5,7 @@ import './style.css';
 
 function CalendarPage() {
   const [calendarOverlayShown, setCalendarOverlayShown] = useState(false);
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState(null);
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
 
@@ -143,7 +143,7 @@ function CalendarPage() {
     <>
     <div id="calendar-page-container">
       <div id="calendar-main-container">
-      <h1 className="calendar-title page-title green-text">CALENDAR</h1>
+      <h1 id="calendar-title" className="calendar-title page-title green-text">CALENDAR</h1>
         <div className="calendar-year-container calendar-main-horizontal-wrapper">
           
           <h2 id="calendar-year-main" className="calendar-main-heading" onClick={showCalendar}>{selectedYear}</h2>
