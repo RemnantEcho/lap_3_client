@@ -26,7 +26,9 @@ export default function NavBar() {
           </div>
         </nav>
       </header>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
