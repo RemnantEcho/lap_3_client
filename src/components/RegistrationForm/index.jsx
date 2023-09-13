@@ -36,7 +36,7 @@ const RegistrationForm = () => {
 
    
         axios.post('http://localhost:3000/users/register', registrationData).then((response) => {
-            console.log("thank u for registering", response.status, response.formData.token)
+            console.log("thank u for registering", response.status)
         });
       
 } 
