@@ -4,13 +4,8 @@ import CalendarDayButton from '../CalendarDayButton';
 export default function CalendarDayList({ selectedDate }) {
     const [dayButtons, setDayButtons] = useState([]);
 
-    function generateDayButtons() {
-
-    }
-
     useEffect(() => {
         if (selectedDate) {
-            console.log('At use effect: ' + selectedDate);
             const days = new Date(selectedDate.getFullYear(), selectedDate.getMonth()+1, 0).getDate();
             let tempDayArray = [];
 
@@ -32,6 +27,7 @@ export default function CalendarDayList({ selectedDate }) {
                 
                 return <CalendarDayButton id={`day-button-${d.day}`} key={`day-${d.day+1}`} day={d.day+1} selectedDate={selectedDate} />
             })}
+
         </div>
     </>
     

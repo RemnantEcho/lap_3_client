@@ -7,6 +7,13 @@
 
 #calendar-main-container {
     padding: 6% 10%;
+    width: 100%;
+    height: 100%;
+}
+
+#calendar-main-container * {
+    line-height: normal;
+    text-decoration: none;
 }
 
 .page-title {
@@ -49,7 +56,7 @@
 }
 
 .calendar-main-button:hover svg path {
-    fill:#B8EB77;
+    fill:#60C77F;
 }
 
 .calendar-main-horizontal-wrapper {
@@ -65,7 +72,13 @@
 }
 
 .calendar-main-heading:hover {
-    color: #B8EB77;
+    color: #60C77F;
+}
+
+.day-button-link {
+    margin: 12px;
+    text-decoration: none;
+    flex: 0 0 7.5%;
 }
 
 .calendar-day-button {
@@ -73,27 +86,34 @@
     background-color: #fff;
     border: none;
     border-radius: 5px;
+    display: block;
     width: 50px;
     height: 50px;
     cursor: pointer;
     transition: background-color .4s, color .2s;
-    
+    text-decoration: none;
 }
 
 .calendar-day-button:hover {
-    background-color: #B8EB77;
+    background-color: #60C77F;
     color: #fff;
 }
 
 #calendar-day-list {
     padding: 5%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    height: 50%;
 }
 
 #calendar-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
     display: flex;
@@ -128,7 +148,7 @@
 }
 
 .calendar-top-button:hover {
-    color: #B8EB77;
+    color: #60C77F;
 }
 
 .calendar-overlay-month-button {
@@ -140,7 +160,7 @@
 }
 
 .calendar-overlay-month-button:hover {
-    color:#B8EB77;
+    color:#60C77F;
 }
 
 .calendar-overlay-main {
@@ -150,6 +170,8 @@
     align-items: center;
     margin-top: 5%;
 }
+
+
 
 #calendar-overlay-close-button {
     position: absolute;
@@ -166,7 +188,7 @@
 }
 
 #calendar-overlay-close-button:hover svg path {
-    fill: #B8EB77;
+    fill: #60C77F;
 }
 
 #calendar-bottom-bar {

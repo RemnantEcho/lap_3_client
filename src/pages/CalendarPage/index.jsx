@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { CalendarDayList, CalendarOverlay } from './../../components';
 import './style.css';
 
-export default function CalendarPage() {
+function CalendarPage() {
   const [calendarOverlayShown, setCalendarOverlayShown] = useState(false);
   const [selectedDate, setSelectedDate] = useState();
   const [selectedMonth, setSelectedMonth] = useState('');
@@ -53,7 +54,6 @@ export default function CalendarPage() {
     e.preventDefault();
 
     let tempMonth = selectedDate.getMonth();
-    // console.log(`selected Date Before: ${selectedDate}`);
     let tempDate = new Date(selectedDate);
 
     if (tempMonth === 11) {
@@ -63,7 +63,6 @@ export default function CalendarPage() {
       tempDate.setMonth(tempMonth+1);
     }
     setSelectedDate(tempDate);
-    // console.log(`selected Date After: ${selectedDate}`);
     setSelectedMonth(tempDate.toLocaleString('default', { month: 'long'}));
   }
 
@@ -86,7 +85,6 @@ export default function CalendarPage() {
 
   function showMonthButtons(e) {
     e.preventDefault();
-    // console.log(e.target);
     if (e.target.classList.contains('calendar-main-horizontal-wrapper')) {
       e.target.querySelector('.calendar-main-button-wrapper').classList.remove('hide');
     }
@@ -109,7 +107,6 @@ export default function CalendarPage() {
   }, []);
 
   useEffect(() => {
-    console.log(calendarOverlayShown);
     if (calendarOverlayShown) {
       document.getElementById('calendar-overlay').classList.remove('hide');
     }
@@ -120,7 +117,6 @@ export default function CalendarPage() {
   }, [calendarOverlayShown]);
 
   useEffect(() => {
-    console.log(`Parent Selected Date: ${selectedDate}`);
   }, [selectedDate]);
 
   useEffect(() => {
@@ -182,7 +178,7 @@ export default function CalendarPage() {
         </div>
         <CalendarDayList selectedDate={selectedDate} />
           <div id="calendar-bottom-bar">
-            <button id="calendar-view-all-button" className="button-style green-button push-right">View All</button>
+            <Link to="/todo" className="push-right day-button-link"><button id="calendar-view-all-button" className="button-style green-button">View All</button></Link>
           </div>
       </div>
         
@@ -199,3 +195,5 @@ export default function CalendarPage() {
     </>
   )
 }
+
+export default CalendarPage;

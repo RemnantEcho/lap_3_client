@@ -12,21 +12,28 @@ import CalendarPage from '.';
 describe("Calendar component", () => {
 
     beforeEach(() => {
-        render(<CalenderPage />);
+        render(
+            <CalendarPage />
+        );
     });
-
-    it("Displays a heading", () => {
-
-        const elem = screen.getByRole("heading");
-        expect(elem).toBeInTheDocument();
-        expect(elem.textContent).toBe("/Calendar/i");
-    })
-
-    
-
 
     afterEach(() => {
         cleanup();
     })
+
+    it("Displays a heading", async () => {
+        // const linkElement = await screen.findByText(/Kaliteye hoşgeldiniz/i);
+        const elem = screen.getByRole("heading");
+        expect(elem).toBeInTheDocument();
+        expect(elem.textContent).toBe(/Calendar/i);
+    })
+
+    it("Displays the year heading", () => {
+
+        const elem = screen.getByRole("heading");
+        expect(elem).toBeInTheDocument();
+        // expect(elem.textContent).toBe("/Calendar/i");
+    })
+    
 
 });

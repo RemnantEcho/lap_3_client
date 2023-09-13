@@ -35,8 +35,6 @@ export default function CalendarOverlay({calendarOverlayShown, setCalendarOverla
 
     function onMonthButtonClick(e) {
         e.preventDefault();
-
-        console.log(e.target.id);
         let tempDate = new Date(selectedDate);
         let tempMonth = selectedDate.getMonth();
         
@@ -80,8 +78,6 @@ export default function CalendarOverlay({calendarOverlayShown, setCalendarOverla
             
         }
 
-        // console.log(tempDate);
-        // console.log(selectedDate);
         setSelectedDate(tempDate);
         setSelectedMonth(tempDate.toLocaleString('default', { month: 'long'}));
         setCalendarOverlayShown(false);

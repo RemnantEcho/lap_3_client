@@ -4,6 +4,14 @@
     box-sizing: border-box;
   }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
 body {
     font-size: 20px;
     line-height: 12pt;
@@ -17,6 +25,7 @@ body {
 
 main {
     width: 80vw;
+    height: 100%;
     overflow: auto;
 }
 
@@ -25,20 +34,6 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-main {
-    height: 100%;
-    width: calc(100% - 260px);
-    background-color: #fff;
 }
 
 .hidden-style-button {
@@ -54,19 +49,21 @@ main {
     font-weight: bold;
     padding: 6px 12px;
     cursor: pointer;
+    transition: background-color .4s;
+    white-space: nowrap;
 }
 
 .green-text {
-    color:#B8EB77;
+    color:#60C77F;
 }
 
 .green-button {
-    background-color:#B8EB77;
+    background-color:#60C77F;
     color: #fff;
 }
 
 .green-button:hover {
-    background-color: #94ba62;
+    background-color: #4c9f65;
 }
 
 .push-right {
