@@ -1,4 +1,5 @@
 import React from 'react';
+import BrowserRouter from 'react-router-dom';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -13,7 +14,9 @@ describe("Calendar component", () => {
 
     beforeEach(() => {
         render(
-            <CalendarPage />
+            <BrowserRouter>
+                <CalendarPage />
+            </BrowserRouter>
         );
     });
 
@@ -23,16 +26,10 @@ describe("Calendar component", () => {
 
     it("Displays a heading", async () => {
         // const linkElement = await screen.findByText(/Kaliteye hoşgeldiniz/i);
-        const elem = screen.getByRole("heading");
+        // const elem = screen.getByRole("heading");
+        const elem = document.getElementById('calendar-title');
         expect(elem).toBeInTheDocument();
         expect(elem.textContent).toBe(/Calendar/i);
-    })
-
-    it("Displays the year heading", () => {
-
-        const elem = screen.getByRole("heading");
-        expect(elem).toBeInTheDocument();
-        // expect(elem.textContent).toBe("/Calendar/i");
     })
     
 

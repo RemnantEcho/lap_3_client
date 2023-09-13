@@ -9,7 +9,7 @@ export default function LoginPage() {
       <input type="text" name="email" placeholder="Email" />
         <input type="text" id="username" name="username" placeholder="Username" />
         <input type="password" id="password" name="password" placeholder="Password" />
-        <input type="submit" value="Log In" class="login-btn" />
+        <input type="submit" value="Log In" className="login-btn" />
       </form>
 
       <div id="login">
