@@ -15,7 +15,7 @@ export default function TodoPage() {
 
   const handleHideToDoCard = () => {
     setShowToDoCard(false);
-    setFinalResults([]); 
+    setFinalResults([]);
     setSearching(true)
   };
 
@@ -23,11 +23,10 @@ export default function TodoPage() {
     console.log('line 23 page', results)
     setFinalResults(results);
     if (searching === false) {
-      setShowToDoCard(false); 
+      setShowToDoCard(false);
     } else {
       setShowToDoCard(true)
     }
-    
   };
 
   const resetSearching = () => {
@@ -39,31 +38,34 @@ export default function TodoPage() {
       <div id='todo-title'>
         <h1>To Do</h1>
       </div>
-      
+
       <div id='search'>
         <div id='date-cont'>
           <h2>Date</h2>
           <h2>Month</h2>
         </div>
-        <Search onShowToDoCard={handleShowToDoCard} onHideToDoCard={handleHideToDoCard} onSearchResults={handleSearchResults} resetSearching={resetSearching}/>
+        <Search onShowToDoCard={handleShowToDoCard} onHideToDoCard={handleHideToDoCard} onSearchResults={handleSearchResults} resetSearching={resetSearching} />
       </div>
 
       <div id='card'>
         {showToDoCard && !searching ? <ToDoCard /> : null}
 
-        {finalResults.length === 0 && !searching ? (<h3>Nothing to show!</h3>) : (
+        {(searching || finalResults.length > 0) && (
           <ul>
             {finalResults.map((result, index) => (
               <li id='output' key={index}>
                 <div>
-                  <h3> {result.goal} </h3> 
-                  <p>Date: {result.date}</p> 
+                  <h3> {result.goal} </h3>
+                  <p>Date: {result.date}</p>
                   <p>Category: {result.category}</p>
-                  <p>Progress: {result.progressValue}</p> 
+                  <p>Progress: {result.progressValue}</p>
                 </div>
               </li>
             ))}
           </ul>
+        )}
+        {!searching && finalResults.length === 0 && !showToDoCard && (
+          <h3>Nothing to show!</h3>
         )}
       </div>
     </div>

@@ -29,7 +29,7 @@ const ToDoCard = () => {
     <div>
       <ul>
         {results.map((item) => (
-          <li key={item._id}>
+          <li style={{listStyle: 'none'}}key={item._id}>
             <div>
               <h3>{item.goal}</h3>
               <p> Date: {item.date} </p>
