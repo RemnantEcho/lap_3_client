@@ -1,0 +1,83 @@
+#account-page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#account-main-container {
+    padding: 6% 10%;
+    width: 100%;
+    height: 100%;
+}
+
+#account-main-container * {
+    line-height: normal;
+    text-decoration: none;
+}
+
+.account-input {
+    height: 35px;
+    border: 3px solid #60C77F;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 6px;
+}
+
+.account-input::selection {
+    background-color: #fff159;
+}
+
+.account-input:disabled {
+    border-radius: 0;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid #757575;
+    background-color: #f8f8f8;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 6px 0;
+}
+
+.account-input-wrapper label {
+    margin-bottom: 6px;
+}
+
+.account-input-wrapper input[type=text] {
+    width: 240px;
+}
+
+#account-details-edit-button {
+    font-size: 1.0em;
+    margin-left: 15%;
+    width: 100px;
+    height: 40px;
+}
+
+#account-details-submit-button {
+    margin-top: 12px;
+    width: 240px;
+}
+
+.account-form-top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#account-password-form {
+    margin-top: 12px;
+}
+
+#account-password-submit-button {
+    margin-top: 12px;
+    width: 240px;
+}
