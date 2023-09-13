@@ -36,7 +36,7 @@ export default function TodoPage() {
   return (
     <div id='todo-page'>
       <div id='todo-title'>
-        <h1>To Do</h1>
+        <h1>TO DO</h1>
       </div>
 
       <div id='search'>
