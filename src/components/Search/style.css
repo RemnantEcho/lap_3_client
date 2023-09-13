@@ -1,6 +1,9 @@
 .search-cont {
     display: flex;
+    /* position: relative; */
 }
+
+
 
 #form {
     height: 3.5rem;
@@ -10,7 +13,10 @@
     border-radius: 2px;
     font-size: 1rem;
     padding-left: 1rem;
+    padding-right: 2.5rem;
+    cursor: auto;
 }
+
 
 #submit-btn {
     height: 3.5rem;
@@ -20,6 +26,7 @@
     margin-left: 0.5rem;
     font-size: 1rem;
     background-color: #60C77F;
+    cursor: pointer;
 }
 
 #output {

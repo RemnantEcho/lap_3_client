@@ -13,25 +13,27 @@
   display: flex;
   font-size: 1.5rem;
   align-items: center;
-  padding-left: 4rem;
-  padding-top: 4rem;
+  color: #60C77F;
+  padding-left: 10rem;
+  padding-top: 5rem;
   margin-bottom: 5rem;
 }
 
 #bottom-box, #top-box {
   display: flex;
   justify-content: space-between;
-  padding-left: 4rem;
-  padding-right: 25rem;
+  padding-left: 10rem;
+  padding-right: 15rem;
+
 }
 
 #bottom-box {
   display: flex;
   display: flex;
   justify-content: space-between;
-  padding-left: 4rem;
-  padding-right: 25rem;
-  margin-top: 5rem;
+  padding-left: 10rem;
+  padding-right: 15rem;
+  margin-top: 7rem;
 }
 
 #font-size,
@@ -45,9 +47,9 @@
   width: 30rem;
 }
 
-input {
+/* input {
   /* cursor: pointer; */
-}
+/* } */ 
 
 #calendar-page-container {
   position: relative;

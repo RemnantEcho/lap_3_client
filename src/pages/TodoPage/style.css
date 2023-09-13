@@ -8,10 +8,11 @@
 #todo-title {
     display: flex;
     font-size: 1.5rem;
+    color: #60C77F;
     /* background-color: aquamarine; */
     align-items: center;
-    padding-left: 4rem;
-    padding-top: 4rem;
+    padding-left: 10rem;
+    padding-top: 5.5rem;
     margin-bottom: 1rem;
 }
 
@@ -19,12 +20,12 @@
     /* background-color: antiquewhite; */
     display: flex;
     justify-content: space-between;
-    padding-left: 4rem;
+    padding-left: 10rem;
     padding-right: 4rem;
     align-items: center;
 }
 
 #card {
-    padding-left: 4rem;
+    padding-left: 10rem;
     padding-top: 5rem;
 }

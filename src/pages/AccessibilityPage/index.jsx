@@ -35,7 +35,7 @@ export default function AccessibilityPage() {
   return (
     <div id='accessibility-page'>
       <div id='title'>
-        <h1>Accessibility Settings</h1>
+        <h1>ACCESSIBILITY</h1>
       </div>
 
       <div id='top-box'>
