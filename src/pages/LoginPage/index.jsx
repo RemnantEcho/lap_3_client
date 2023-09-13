@@ -1,16 +1,10 @@
 import React from 'react';
+import LoginForm from '../../components/LoginForm';
 
 export default function LoginPage() {
   return (
-    <div id="form-container">
-      <h2>Login</h2>
-
-      <form id="login-form">
-      <input type="text" name="email" placeholder="Email" />
-        <input type="text" id="username" name="username" placeholder="Username" />
-        <input type="password" id="password" name="password" placeholder="Password" />
-        <input type="submit" value="Log In" className="login-btn" />
-      </form>
+    <div>
+    <LoginForm />
 
       <div id="login">
         <p>Don't have an account? <a id="link-register" href="./register.html">Register here</a></p>
