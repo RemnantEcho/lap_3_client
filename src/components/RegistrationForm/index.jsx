@@ -36,17 +36,14 @@ const RegistrationForm = () => {
 
    
         axios.post('http://localhost:3000/users/register', registrationData).then((response) => {
-            console.log("thank u for registering", response.status, response.formData.token)
+            console.log("thank u for registering", response.status)
         });
       
 } 
-
-
-
     
   return (
     <div>
-      <h2>Registration</h2>
+      <h2 role="heading">Registration</h2>
       <form onSubmit={handleSubmit}>
       <div>
           <label>First Name:</label>
