@@ -79,12 +79,14 @@ export default function AccountPage() {
       if (response.status === 200) {
           // const responseData = response.data.User;
           console.log('Updated Successfully');
-          setIsEditingDetails(false);
+          setPassword('');
+          setRPassword('');
       }
     } catch (error) {
         console.error('Error Updating Account:', error);
         // fetchAccountInfo();
-        setIsEditingDetails(false);
+        setPassword('');
+        setRPassword('');
     }
   }
 
