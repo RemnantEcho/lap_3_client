@@ -4,7 +4,7 @@ import axios from '../../api/axios';
 import { Link, useNavigate, useLocation} from 'react-router-dom';
 
 const LoginForm = () => {
-    const { setAuth} = useAuth();
+    const { auth, setAuth } = useAuth();
     
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -12,7 +12,7 @@ const LoginForm = () => {
     const userRef = useRef();
     const errRef = useRef();
     const navigate = useNavigate();
-    const[user, setUser] = useState('');
+    const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
@@ -38,14 +38,17 @@ const LoginForm = () => {
             console.log("entered try statement")
             console.log("this is username",username, "this is user", user,"this one is password",password, "this one is pwd", pwd)
             const response = await axios.post('/users/login', data);
-            const accessToken = response.data.accessToken;
+            console.log(response.data);
+            const accessToken = response.data.token;
+            const id = response.data.id;
             console.log(accessToken)
+
             // need to check these two lines
-            setAuth({user,pwd, accessToken})
+            await setAuth({user, pwd, accessToken, id})
             setUser('');
             setPwd('');
+            console.log(auth);
             navigate(from, {replace: true});
-           
         }
 
         catch (err) {

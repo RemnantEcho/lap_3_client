@@ -1,8 +1,26 @@
 #student-home-page {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#student-home-wrapper {
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+
+}
+
+#student-home-wrapper a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 5%;
+}
+
+#student-home-greeting {
+    margin-bottom: 60px;
 }
 
 .student-home-box {
