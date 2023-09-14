@@ -86,7 +86,7 @@
 
 .calendar-day-button {
     font-size: 1.5rem;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     border-radius: 2px;
     display: flex;
