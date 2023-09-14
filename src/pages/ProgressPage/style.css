@@ -1,0 +1,28 @@
+.month_progress_all {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 10em;
+}
+
+.month_progress_each {
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
+    transition: background-color .4s;
+    
+}
+
+.month_progress_each:hover {
+    background-color: #60C77F;
+}
+
+
+#progress_title {
+    font-size: 2.5rem;
+    margin: 6px 0;
+    color: #60C77F;
+    margin-top: 60px;
+    margin-left: 70px;;
+    padding-left: 90px;
+    padding-top: 40px;
+}
