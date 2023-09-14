@@ -16,10 +16,61 @@ export default function AccountPage() {
 
   let tempDetails = {};
 
+  const fetchAccountInfo = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/users/0');
+      if (response.status === 200) {
+          const responseData = response.data.User;
+          setFName(responseData.firstName);
+          setLName(responseData.lastName);
+          setUsername(responseData.username);
+          setEmail(responseData.email);
+          
+      }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        
+    }
+  }
+
+  const updateAccountInfo = async () => {
+    try {
+      const options = {
+        method: "PATCH",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "firstName": fName,
+            "lastName": lName,
+            "username": username,
+            "email": email,
+        })
+    }
+
+      const response = await axios.get('http://localhost:3000/users/0', options);
+      if (response.status === 200) {
+          // const responseData = response.data.User;
+          console.log('Updated Successfully');
+          setIsEditingDetails(false);
+      }
+    } catch (error) {
+        console.error('Error Updating Account:', error);
+        // fetchAccountInfo();
+        setIsEditingDetails(false);
+    }
+  }
+
   function toggleDetailsEdit(e) {
     e.preventDefault();
-    if (!isEditingDetails);
+    if (isEditingDetails) fetchAccountInfo;
     setIsEditingDetails(!isEditingDetails);
+  }
+
+  function handleUpdateSubmit(e) {
+    e.preventDefault();
+    updateAccountInfo();
   }
 
   useEffect(() => {
@@ -47,7 +98,20 @@ export default function AccountPage() {
 
   useEffect(() => {
     const fetchAccountInfo = async () => {
-      
+      try {
+        const response = await axios.get('http://localhost:3000/users/0');
+        if (response.status === 200) {
+            const responseData = response.data.User;
+            setFName(responseData.firstName);
+            setLName(responseData.lastName);
+            setUsername(responseData.username);
+            setEmail(responseData.email);
+            
+        }
+      } catch (error) {
+          console.error('Error fetching data:', error);
+          
+      }
     }
 
     fetchAccountInfo()
@@ -59,7 +123,7 @@ export default function AccountPage() {
       <div id="account-main-container">
       <h1 className="account-title page-title green-text">ACCOUNT</h1>
       
-      <form id="account-details-form" className="account-form">
+      <form id="account-details-form" className="account-form" onSubmit={handleUpdateSubmit}>
         <div className="account-form-top-bar">
           <h2>Personal Details</h2>
           <button id="account-details-edit-button" className="button-style green-button" onClick={toggleDetailsEdit}>Edit Details</button>
