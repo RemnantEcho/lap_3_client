@@ -218,7 +218,7 @@
     background-color: #60C77F;
     color: black;
     font-size: 1.5rem;
-    transition: background-color .4s;
+    transition: background-color .4s, box-shadow .4s;
 }
 
 #calendar-view-all-button:hover {

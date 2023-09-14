@@ -60,11 +60,16 @@
     margin-left: 15%;
     width: 100px;
     height: 40px;
+    color: #000;
 }
 
 #account-details-submit-button {
     margin-top: 12px;
     width: 240px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #000;
 }
 
 .account-form-top-bar {
@@ -80,4 +85,9 @@
 #account-password-submit-button {
     margin-top: 12px;
     width: 240px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #000;
+    /* font-weight: bold; */
 }

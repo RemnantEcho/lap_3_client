@@ -43,16 +43,17 @@ main {
     background-color: transparent;
 }
 
-/* .button-style {
-    border: none;
+.button-style {
+    width: 180px;
+    height: 70px;
+    border: 1px solid black;
     border-radius: 2px;
+    background-color: #60C77F;
+    color: black;
     font-size: 1.5rem;
-    font-weight: bold;
-    padding: 6px 12px;
+    transition: background-color .4s, box-shadow .4s;
     cursor: pointer;
-    transition: background-color .4s; */
-    /* white-space: nowrap; */
-/* } */
+} 
 
 .green-text {
     color:#60C77F;
