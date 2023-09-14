@@ -34,7 +34,7 @@ const ToDoCard = () => {
 
   const handleComplete = async (_id) => {
     try {
-      const item = results.find((goalItem) => goalItem._id === _id); // Find the item by _id
+      const item = results.find((goalItem) => goalItem._id === _id); 
       if (!item) {
         console.error('Goal not found');
         return;
@@ -104,9 +104,9 @@ const ToDoCard = () => {
     try {
       const response = await axios.patch(`http://localhost:3000/goals/${editedItem._id}`, {
         goal: editedItem.goal,
-        date: editedItem.date, // Include the date field
+        date: editedItem.date, 
         category: editedItem.category,
-        status: editedItem.status, // Include other fields as needed
+        status: editedItem.status, 
         progressValue: editedItem.progressValue,
       });
 
