@@ -10,6 +10,7 @@
     background-color: #FFFFFF;
     transition: background-color .4s;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 #guest-login-button:hover {
@@ -27,6 +28,7 @@
     transition: background-color .4s;
     font-size: 1.5rem;
     color: black;
+    cursor: pointer;
 }
 
 #guest-signup-button:hover {
