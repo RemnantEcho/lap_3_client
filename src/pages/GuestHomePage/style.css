@@ -1,0 +1,13 @@
+#guest-signup-button {
+    height: 48px;
+}
+
+#guest-login-button {
+    font-size: 1.0em;
+    cursor: pointer;
+}
+
+#guest-login-button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

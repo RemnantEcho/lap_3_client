@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css'
+import GuestHomePage from '../GuestHomePage';
+import StudentHomePage from '../StudentHomePage';
 
 export default function HomePage() {
+  const [hasToken, setHasToken] = useState(false); // temporary change when auth implemented
+
   return (
-    <div className='home-page'>
-      <h1>Welcome to the app</h1>
-      <div className='btn-cont'>
-        <button>Login</button>
-        <button>Sign Up</button>
-      </div>
-    </div>
+    <>
+      {hasToken
+      ? <StudentHomePage />
+      : <GuestHomePage />
+      }
+    </>
+    
   )
 }
