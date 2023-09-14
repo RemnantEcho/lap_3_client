@@ -33,7 +33,7 @@
 .login-input {
     height: 40px;
     border: 3px solid #757575;
-    border-radius: 5px;
+    border-radius: 2px;
     outline: none;
     padding: 0 6px;
     font-size: 1.0rem;
@@ -61,8 +61,8 @@
     margin: 0 auto;
     margin-top: 36px;
     width: 160px;
-    height: 45px;
-    font-weight: bold;
-    font-size: 1.4rem;
-    
+    height: 60px;
+    /* font-weight: bold; */
+    font-size: 1.5rem;
+    color: black;
 }

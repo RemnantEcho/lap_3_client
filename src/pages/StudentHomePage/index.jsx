@@ -54,8 +54,9 @@ export default function StudentHomePage() {
           </div>
         </Link>
       </div>
-      
+      <img id='bg-image' src="bg-image.png" alt="" />
     </div>
+    
     </>
   )
 }

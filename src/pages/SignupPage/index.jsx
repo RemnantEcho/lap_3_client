@@ -6,6 +6,7 @@ export default function SignupPage() {
   return (
     <div id="signup-page">
       <RegistrationForm />
+      <img id='bg-image-small' src="bg-image.png" alt="logo" />
     </div>
     )
 }
