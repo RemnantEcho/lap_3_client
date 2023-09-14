@@ -1,9 +1,14 @@
 import React from 'react';
+import GetProgress from '../../components/GetProgress'
+import './style.css';
 
 export default function ProgressPage() {
   return (
     <>
-    <h1>progress page</h1>
+    <div className="progress_body">
+    <h1 id="progress_title">PROGRESS</h1>
+    <GetProgress/>
+    </div>
     </>
   )
 }
