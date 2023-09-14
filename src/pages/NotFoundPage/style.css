@@ -17,6 +17,7 @@
     border: 1px solid black;
     border-radius: 2px;
     background-color: #60C77F;
+    transition: background-color .4s;
 }
 
 #home-link {

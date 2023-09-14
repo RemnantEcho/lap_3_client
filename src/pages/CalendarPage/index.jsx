@@ -188,8 +188,8 @@ function CalendarPage() {
         selectedDate={selectedDate} setSelectedDate={setSelectedDate} 
         selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} 
         selectedYear={selectedYear}  setSelectedYear={setSelectedYear} />
+      <img id='bg-image-small' src="bg-image.png" alt="logo" />
 
-        
     </div>
       
     </>
