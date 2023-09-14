@@ -21,7 +21,7 @@ export default function CalendarDayButton({id, day, selectedDate}) {
     }, [selectedDate]);
 
     return (
-        <Link className="day-button-link" to={`/todo/${day}-${selectedDate.getMonth()}-${selectedDate.getFullYear()}`}>
+        <Link className="day-button-link" to={`/todo/${selectedDate.getFullYear()}-${selectedDate.getMonth()+1}-${day}`}>
             <button id={id} className="calendar-day-button">
                 <span className="day-button-day-text">{weekDayText}</span>
 
