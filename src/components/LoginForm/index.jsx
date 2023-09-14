@@ -78,10 +78,15 @@ const LoginForm = () => {
    
 
     <section>
-      <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
+        
+      <form id="login-form" onSubmit={handleSubmit}>
+        <h1 id="login-title">Login</h1>
+        <p className="login-signup-text">Don't have an account? <Link to="/signup" className="login-sign-up-button">Sign Up</Link></p>
+        <p ref={errRef} className= {errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+
+        <label htmlFor="username">Username</label>
         <input 
+        className="login-input" 
         type="text" 
         id="username" 
         ref={userRef}
@@ -89,15 +94,16 @@ const LoginForm = () => {
         value={user}
         required
         /> <br />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">Password</label>
         <input 
+        className="login-input"
         type="password" 
         id="password" 
         onChange={(e) => setPwd(e.target.value)}
         value={pwd}
         required
         />
-        <button>Sign-in</button>
+        <input type="submit" id="login-button" className="button-style green-button" defaultValue="Log in" />
       </form>
     </section>
   )

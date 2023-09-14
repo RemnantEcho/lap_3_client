@@ -1,10 +1,12 @@
 import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 
-import matchers from '@testing-library/jest-dom/matchers';
+import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
+
+import axios from "axios";
 
 import Search from '.';
 
@@ -30,4 +32,25 @@ describe ('Search component', () => {
 
         expect(button).toBeInTheDocument()
     })
+
+    // it('displays tasks when the api is called', async() => {
+    //     vi.spyOn(axios, 'get').mockResolvedValueOnce({
+    //         data: [
+    //             {
+    //                 "goal": "finish painting",
+    //                 "date": "2023-09-12",
+    //                 "category": "homework",
+    //                 "status": 1,
+    //                 "progressValue": "Incomplete"
+    //             }
+    //         ]
+    //     })
+
+    //     render(<Search/>)
+
+    //     const task = await waitFor(() => screen.getByText(/finish painting/i));
+
+    //     expect(task).toBeInTheDocument()
+    // })
 })
+

@@ -13,25 +13,27 @@
   display: flex;
   font-size: 1.5rem;
   align-items: center;
-  padding-left: 4rem;
-  padding-top: 4rem;
+  color: #60C77F;
+  padding-left: 9.75rem;
+  padding-top: 3.25rem;
   margin-bottom: 5rem;
 }
 
 #bottom-box, #top-box {
   display: flex;
   justify-content: space-between;
-  padding-left: 4rem;
-  padding-right: 25rem;
+  padding-left: 9.75rem;
+  padding-right: 15rem;
+
 }
 
 #bottom-box {
   display: flex;
   display: flex;
   justify-content: space-between;
-  padding-left: 4rem;
-  padding-right: 25rem;
-  margin-top: 5rem;
+  padding-left: 9.75rem;
+  padding-right: 15rem;
+  margin-top: 7rem;
 }
 
 #font-size,
@@ -45,9 +47,9 @@
   width: 30rem;
 }
 
-input {
+/* input {
   /* cursor: pointer; */
-}
+/* } */ 
 
 #calendar-page-container {
   position: relative;
@@ -59,4 +61,14 @@ input {
   padding: 6% 10%;
   width: 100%;
   height: 100%;
+}
+
+#bg-image-small {
+  position: absolute;
+  width: 30%;
+  z-index: -1;
+  opacity: 0.2;
+  top: 5rem;
+  right: 3rem;
+  
 }

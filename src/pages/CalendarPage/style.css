@@ -6,9 +6,11 @@
 }
 
 #calendar-main-container {
-    padding: 6% 10%;
+    /* padding: 6% 10%; */
     width: 100%;
     height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
 }
 
 #calendar-main-container * {
@@ -19,6 +21,7 @@
 .page-title {
     font-size: 2.75rem;
     margin: 6px 0;
+    color: #60C77F;
 }
 
 #calendar-year-main {
@@ -82,10 +85,10 @@
 }
 
 .calendar-day-button {
-    font-size: 1.8rem;
-    background-color: #fff;
+    font-size: 1.5rem;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,17 +107,21 @@
 
 .calendar-day-button:hover {
     background-color: #60C77F;
-    color: #fff;
+    /* color: #fff; */
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid black; */
 }
 
 #calendar-day-list {
     padding: 5%;
+    padding-bottom: 1%;
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
     /* align-items: center; */
     flex-wrap: wrap;
     /* height: 50%; */
+    margin-bottom: 0;
 }
 
 #calendar-overlay {
@@ -180,7 +187,6 @@
 }
 
 
-
 #calendar-overlay-close-button {
     position: absolute;
     top: 7%;
@@ -205,5 +211,16 @@
 }
 
 #calendar-view-all-button {
-    margin-right: 5%;
+    width: 180px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #60C77F;
+    color: black;
+    font-size: 1.5rem;
+    transition: background-color .4s, box-shadow .4s;
+}
+
+#calendar-view-all-button:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }

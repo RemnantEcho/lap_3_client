@@ -8,11 +8,9 @@ const ToDoCard = () => {
     const { date } = useParams()
 
     useEffect(() => {
-
-        // if (!date) {
-          const fetchData = async () => {
+        const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/goals')
+                const response = await axios.get(`http://localhost:3000/goals/${date}`)
                 if (response.status === 200) {
                     const responseData = response.data
                     const data = responseData.goal
@@ -27,26 +25,7 @@ const ToDoCard = () => {
             }
         }
         fetchData()
-        // } else {
-        //   const fetchDatabyDate = async () => {
-        //     try {
-        //         const response = await axios.get(`http://localhost:3000/goals/${date}`)
-        //         if (response.status === 200) {
-        //             const responseData = response.data
-        //             const data = responseData.goal
-        //             if (Array.isArray(data)) {
-        //                 setResults(data)
-        //             } else {
-        //                 console.error('Data is not an array')
-        //             }
-        //         }
-        //     } catch (error) {
-        //         console.error('Error fetching data:', error)
-        //     }
-        // }
-        // }  // I have modified the code to check whether a parameter is provided using an if statement, and show the output according to that. 
-        
-      }, [])
+    }, [])
 
 
   return (

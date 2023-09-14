@@ -34,8 +34,9 @@ export default function AccessibilityPage() {
 
   return (
     <div id='accessibility-page'>
+      <img id='bg-image-small' src="bg-image.png" alt="logo" />
       <div id='title'>
-        <h1>Accessibility Settings</h1>
+        <h1>ACCESSIBILITY</h1>
       </div>
 
       <div id='top-box'>
