@@ -46,7 +46,7 @@ const RegistrationForm = () => {
     <div>
       <form id="signup-form" onSubmit={handleSubmit}>
       <h1 id="signup-title" role="heading">Sign Up</h1>
-      <p className="signup-login-text">Already have an account? <Link to="/signup" className="signup-login-button">Login</Link></p>
+      <p className="signup-login-text">Already have an account? <Link to="/login" className="signup-login-button">Login</Link></p>
       <div className="signup-horizontal-wrapper">
           <label htmlFor="firstname">First Name</label>
           <input
