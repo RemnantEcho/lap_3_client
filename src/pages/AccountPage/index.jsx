@@ -62,6 +62,32 @@ export default function AccountPage() {
     }
   }
 
+  const changePassword = async () => {
+    try {
+      const options = {
+        method: "PATCH",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "password": password
+        })
+    }
+
+      const response = await axios.get('http://localhost:3000/users/0', options);
+      if (response.status === 200) {
+          // const responseData = response.data.User;
+          console.log('Updated Successfully');
+          setIsEditingDetails(false);
+      }
+    } catch (error) {
+        console.error('Error Updating Account:', error);
+        // fetchAccountInfo();
+        setIsEditingDetails(false);
+    }
+  }
+
   function toggleDetailsEdit(e) {
     e.preventDefault();
     if (isEditingDetails) fetchAccountInfo;
@@ -72,6 +98,12 @@ export default function AccountPage() {
     e.preventDefault();
     updateAccountInfo();
   }
+
+  function handleChangePasswordSubmit(e) {
+    e.preventDefault();
+    changePassword();
+  }
+
 
   useEffect(() => {
     const editInputs = document.querySelectorAll('.details-input');
@@ -177,7 +209,7 @@ export default function AccountPage() {
       </form>
       
       
-      <form id="account-password-form" className="account-form">
+      <form id="account-password-form" className="account-form" onSubmit={handleChangePasswordSubmit}>
         <h2> Change password </h2>
         <div className="account-input-wrapper">
         <label htmlFor="old-password">Password</label>
@@ -203,7 +235,7 @@ export default function AccountPage() {
           />
         </div>
         
-        <button id="account-password-submit-button" className="button-style green-button">Change</button>
+        <input id="account-password-submit-button" className="button-style green-button" defaultValue="Change" />
       </form>
 
       </div>
