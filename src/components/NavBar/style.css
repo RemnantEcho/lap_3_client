@@ -45,3 +45,8 @@
     width: 72%;
     height: auto;
 }
+
+#nav-logout {
+    color: #000;
+    text-decoration: none;
+}
