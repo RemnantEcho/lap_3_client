@@ -4,7 +4,7 @@ import GuestHomePage from '../GuestHomePage';
 import StudentHomePage from '../StudentHomePage';
 
 export default function HomePage() {
-  const [hasToken, setHasToken] = useState(false); // temporary change when auth implemented
+  const [success, setSuccess] = useState(false); // temporary change when auth implemented
 
   return (
     // <div className='home-page'>
@@ -16,7 +16,7 @@ export default function HomePage() {
     //   <img id='bg-image' src="bg-image.png" alt="" />
     // </div>
     <>
-      {hasToken
+      {success
       ? <StudentHomePage />
       : <GuestHomePage />
       }

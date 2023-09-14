@@ -2,13 +2,12 @@ import React, {useRef, useState, useEffect} from 'react'
 import useAuth from '../../hooks/useAuth';
 import axios from '../../api/axios';
 import { Link, useNavigate, useLocation} from 'react-router-dom';
+import { useContext } from 'react';
 
 const LoginForm = () => {
     const { setAuth} = useAuth();
-    
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
     const userRef = useRef();
     const errRef = useRef();
     const navigate = useNavigate();
@@ -74,7 +73,7 @@ const LoginForm = () => {
 
    
   return (
-
+    
    
 
     <section>

@@ -4,8 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import { NavBar } from './components'
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import './App.css';
-
+import { createContext } from 'react';
 function App() {
+ 
+
+
   return (
     <Routes>
       {/*public routes */}
