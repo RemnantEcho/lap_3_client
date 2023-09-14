@@ -1,7 +1,6 @@
 import React, {useRef, useState, useEffect, useContext} from 'react'
 import AuthContext from '../../context/AuthProvider';
 import axios from '../../api/axios';
-
 const LOGIN_URL = 'users/login'; //matches his backend url
 
 const LoginForm = () => {
@@ -27,23 +26,19 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("submitting")
+        const data = {
+            username: user,
+            password: pwd
+        }
         try {
+            
             console.log("entered try statement")
             console.log("this is username",username, "this is user", user,"this one is password",password, "this one is pwd", pwd)
-            const response = await axios.post(LOGIN_URL, JSON.stringify({ username: user,password: pwd}),
-            
-            
-            {
-                headers: { 'Content-Type': 'application/json'},
-                withCredentials:true
-            }
-            ); 
-
-            console.log(JSON.stringify(response.data))
-            console.log(JSON.stringify(response))
-            const accesToken = response?.data?.accessToken; // need to check these two lines
-            const roles = response?.data?.roles // need to check these two lines properly 24 
-            setAuth({user,pwd,roles, accesToken})
+            const response = await axios.post('/users/login', data);
+            const accessToken = response.data.accessToken;
+            // need to check these two lines
+            const roles = response.data.roles // need to check these two lines properly 24 
+            setAuth({user,pwd,roles, accessToken})
             setUser('');
             setPwd('');
             setSuccess(true);
