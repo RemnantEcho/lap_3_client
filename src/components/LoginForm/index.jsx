@@ -1,19 +1,20 @@
-import React, {useRef, useState, useEffect, useContext} from 'react'
-import { Link } from 'react-router-dom';
-import AuthContext from '../../context/AuthProvider';
+import React, {useRef, useState, useEffect} from 'react'
+import useAuth from '../../hooks/useAuth';
 import axios from '../../api/axios';
-
-const LOGIN_URL = 'users/login'; //matches his backend url
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 
 const LoginForm = () => {
-    const { setAuth} = useContext(AuthContext);
+    const { setAuth} = useAuth();
+    
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const userRef = useRef();
     const errRef = useRef();
-
+    const navigate = useNavigate();
     const[user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState('');
 
     useEffect(() => {
         userRef.current.focus();
@@ -28,27 +29,25 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("submitting")
+        const data = {
+            username: user,
+            password: pwd
+        }
         try {
+            
             console.log("entered try statement")
             console.log("this is username",username, "this is user", user,"this one is password",password, "this one is pwd", pwd)
-            const response = await axios.post(LOGIN_URL, JSON.stringify({ username: user,password: pwd}),
-            
-            
-            {
-                headers: { 'Content-Type': 'application/json'},
-                withCredentials:true
-            }
-            ); 
-
-            console.log(JSON.stringify(response.data))
-            console.log(JSON.stringify(response))
-            const accesToken = response?.data?.accessToken; // need to check these two lines
-            const roles = response?.data?.roles // need to check these two lines properly 24 
-            setAuth({user,pwd,roles, accesToken})
+            const response = await axios.post('/users/login', data);
+            const accessToken = response.data.accessToken;
+            console.log(accessToken)
+            // need to check these two lines
+            setAuth({user,pwd, accessToken})
             setUser('');
             setPwd('');
-            setSuccess(true);
+            navigate(from, {replace: true});
+           
         }
+
         catch (err) {
             if(!err?.response) {
                 setErrMsg('No Server Response');
@@ -64,18 +63,20 @@ const LoginForm = () => {
 
        
     }
+    // useEffect(() => {
+    //     // Check if the user is authenticated (based on your condition)
+    //     if (success) {
+    //       // If authenticated, redirect to the homepage
+        
+    //     navigate('/'); 
+    //     }
+    // }, [success])
+
+   
   return (
 
-    <>
-    {success ? (
-        <section>
-            <h1>You are logged in!</h1>
-            <br />
-            <p>
-                <a href="#">Go to Home</a>
-            </p>
-        </section>
-    ) :  (  
+   
+
     <section>
         
       <form id="login-form" onSubmit={handleSubmit}>
@@ -105,9 +106,6 @@ const LoginForm = () => {
         <input type="submit" id="login-button" className="button-style green-button" defaultValue="Log in" />
       </form>
     </section>
-)}
-</>
-
   )
 }
 
