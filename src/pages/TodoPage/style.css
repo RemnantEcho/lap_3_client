@@ -11,8 +11,8 @@
     color: #60C77F;
     /* background-color: aquamarine; */
     align-items: center;
-    padding-left: 10rem;
-    padding-top: 5.5rem;
+    padding-left: 9.75rem;
+    padding-top: 3.5rem;
     margin-bottom: 1rem;
 }
 
@@ -20,12 +20,12 @@
     /* background-color: antiquewhite; */
     display: flex;
     justify-content: space-between;
-    padding-left: 10rem;
+    padding-left: 9.75rem;
     padding-right: 4rem;
     align-items: center;
 }
 
 #card {
-    padding-left: 10rem;
+    padding-left: 9.75rem;
     padding-top: 5rem;
 }

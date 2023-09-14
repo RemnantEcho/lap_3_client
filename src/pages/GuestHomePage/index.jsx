@@ -5,8 +5,7 @@ import './style.css';
 export default function GuestHomePage() {
   return (
     <div className='home-page'>
-      <h1>Welcome to ProgFolio!</h1>
-      <p>A Time management app that allows you to keep track of the things you want to do in life. </p>
+      <h1 id='home-title'>ProgFolio: Your Path to Productivity!</h1>
       <div className='btn-cont'>
         <Link to="/login">
           <button id="guest-login-button" className="hidden-style-button">Login</button>
@@ -15,6 +14,7 @@ export default function GuestHomePage() {
           <button id="guest-signup-button" className="button-style green-button">Sign Up</button>
         </Link>
       </div>
+      <img id='bg-image' src="bg-image.png" alt="" />
     </div>
   )
 }

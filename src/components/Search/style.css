@@ -18,7 +18,7 @@
 }
 
 
-#submit-btn {
+#submit-btn, #clear-button {
     height: 3.5rem;
     width: 5rem;
     border: 1px solid black;
@@ -27,7 +27,15 @@
     font-size: 1rem;
     background-color: #60C77F;
     cursor: pointer;
+    font-size: 1rem;
 }
+
+#submit-btn:hover, #clear-button:hover {
+    background-color: #60C77F;
+    /* color: #fff; */
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 #output {
     list-style: none;

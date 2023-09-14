@@ -7,7 +7,7 @@ export default function NotFoundPage() {
     <div id='notFoundPage'>
     <img id='not-found' src="paper.png" alt="" />
 
-    <h1 id='not-found-text'>404: Page Not Found</h1>
+    <h1 id='not-found-text'>404: PAGE NOT FOUND</h1>
     <button id='home-btn' className="button-style green-button"><Link id='home-link' to='/'> Home </Link></button>
     </div>
   )
