@@ -1,17 +1,20 @@
-import React, {useRef, useState, useEffect, useContext} from 'react'
-import AuthContext from '../../context/AuthProvider';
+import React, {useRef, useState, useEffect} from 'react'
+import useAuth from '../../hooks/useAuth';
 import axios from '../../api/axios';
-const LOGIN_URL = 'users/login'; //matches his backend url
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 
 const LoginForm = () => {
-    const { setAuth} = useContext(AuthContext);
+    const { setAuth} = useAuth();
+    
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const userRef = useRef();
     const errRef = useRef();
-
+    const navigate = useNavigate();
     const[user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState('');
 
     useEffect(() => {
         userRef.current.focus();
@@ -36,13 +39,15 @@ const LoginForm = () => {
             console.log("this is username",username, "this is user", user,"this one is password",password, "this one is pwd", pwd)
             const response = await axios.post('/users/login', data);
             const accessToken = response.data.accessToken;
+            console.log(accessToken)
             // need to check these two lines
-            const roles = response.data.roles // need to check these two lines properly 24 
-            setAuth({user,pwd,roles, accessToken})
+            setAuth({user,pwd, accessToken})
             setUser('');
             setPwd('');
-            setSuccess(true);
+            navigate(from, {replace: true});
+           
         }
+
         catch (err) {
             if(!err?.response) {
                 setErrMsg('No Server Response');
@@ -58,18 +63,20 @@ const LoginForm = () => {
 
        
     }
+    // useEffect(() => {
+    //     // Check if the user is authenticated (based on your condition)
+    //     if (success) {
+    //       // If authenticated, redirect to the homepage
+        
+    //     navigate('/'); 
+    //     }
+    // }, [success])
+
+   
   return (
 
-    <>
-    {success ? (
-        <section>
-            <h1>You are logged in!</h1>
-            <br />
-            <p>
-                <a href="#">Go to Home</a>
-            </p>
-        </section>
-    ) :  (  
+   
+
     <section>
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       <form onSubmit={handleSubmit}>
@@ -93,9 +100,6 @@ const LoginForm = () => {
         <button>Sign-in</button>
       </form>
     </section>
-)}
-</>
-
   )
 }
 
