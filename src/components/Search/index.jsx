@@ -33,7 +33,8 @@ function Search({ onShowToDoCard, onHideToDoCard, onSearchResults, resetSearchin
     setInputText(text);
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (e) => {
+    e.preventDefault();
     const filteredResults = results.filter(
       (result) =>
         result.goal &&
