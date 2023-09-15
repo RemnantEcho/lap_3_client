@@ -72,7 +72,7 @@ function Search({ onShowToDoCard, onHideToDoCard, onSearchResults, resetSearchin
                     />
                     {inputText && (
           <button id='clear-button' onClick={handleClearClick}>
-            Clear
+            X
           </button>
         )}
                 </label>

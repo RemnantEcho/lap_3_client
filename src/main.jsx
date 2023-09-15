@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         
         <Provider store={store}>
             <Router>
-            <AuthProvider>
+                <AuthProvider>
                 <App />
                 </AuthProvider>
             </Router>

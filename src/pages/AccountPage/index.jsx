@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import useAuth from '../../hooks/useAuth'
 
 import './style.css';
 
 export default function AccountPage() {
+  const { auth, setAuth } = useAuth();
   const [isEditingDetails, setIsEditingDetails] = useState(false);
 
   const [fName, setFName] = useState('');
@@ -18,7 +20,7 @@ export default function AccountPage() {
 
   const fetchAccountInfo = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/users/0');
+      const response = await axios.get(`http://localhost:3000/users/${auth.id}`);
       if (response.status === 200) {
           const responseData = response.data.User;
           setFName(responseData.firstName);
@@ -34,6 +36,7 @@ export default function AccountPage() {
   }
 
   const updateAccountInfo = async () => {
+
     try {
       const options = {
         method: "PATCH",
@@ -49,7 +52,7 @@ export default function AccountPage() {
         })
     }
 
-      const response = await axios.get('http://localhost:3000/users/0', options);
+      const response = await axios.get(`http://localhost:3000/users/${auth.id}`, options);
       if (response.status === 200) {
           // const responseData = response.data.User;
           console.log('Updated Successfully');
@@ -74,8 +77,8 @@ export default function AccountPage() {
             "password": password
         })
     }
-
-      const response = await axios.get('http://localhost:3000/users/0', options);
+    console.log(auth.id);
+    const response = await axios.patch(`http://localhost:3000/users/${auth.id}`, options);
       if (response.status === 200) {
           // const responseData = response.data.User;
           console.log('Updated Successfully');
@@ -133,7 +136,7 @@ export default function AccountPage() {
   useEffect(() => {
     const fetchAccountInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/users/0');
+        const response = await axios.get(`http://localhost:3000/users/${auth.id}`);
         if (response.status === 200) {
             const responseData = response.data.User;
             setFName(responseData.firstName);

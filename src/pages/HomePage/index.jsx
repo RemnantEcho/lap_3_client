@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './style.css'
 import GuestHomePage from '../GuestHomePage';
 import StudentHomePage from '../StudentHomePage';
+import useAuth from '../../hooks/useAuth';
 
 export default function HomePage() {
-  const [success, setSuccess] = useState(false); // temporary change when auth implemented
+  const [hasToken, setHasToken] = useState(false); // temporary change when auth implemented
+  const { auth } = useAuth();
 
   return (
     // <div className='home-page'>
@@ -16,7 +18,8 @@ export default function HomePage() {
     //   <img id='bg-image' src="bg-image.png" alt="" />
     // </div>
     <>
-      {success
+    {console.log(auth)}
+      {auth && Object.keys(auth).length !== 0
       ? <StudentHomePage />
       : <GuestHomePage />
       }
