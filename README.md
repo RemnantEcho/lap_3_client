@@ -1,7 +1,7 @@
 # Lap 3 Client - To do list App
 
 
-THIS IS THE FRONT END. PLEASE SEE  Ollie/byrne/Lap3_Server
+THIS IS THE FRONT END. PLEASE SEE  Ollie/byrne/Lap_3_Server
 
 Progfolio is a web application that helps users manage their personal objectives and tasks using a calendar. Users can create an account, log in, and keep track of their tasks, marking them as incomplete, in progress, or completed.
 
