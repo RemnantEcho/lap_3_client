@@ -96,7 +96,7 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
-    transition: background-color .4s, color .2s;
+    transition: background-color .4s, box-shadow .4s;
     text-decoration: none;
 
 }
