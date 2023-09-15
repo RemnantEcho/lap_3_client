@@ -10,6 +10,7 @@ const LoginForm = () => {
     const from = location.state?.from?.pathname || "/";
     const userRef = useRef();
     const errRef = useRef();
+    const [success, setSuccess] = useContext('');
     const navigate = useNavigate();
     const[user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
@@ -62,14 +63,14 @@ const LoginForm = () => {
 
        
     }
-    // useEffect(() => {
-    //     // Check if the user is authenticated (based on your condition)
-    //     if (success) {
-    //       // If authenticated, redirect to the homepage
+    useEffect(() => {
+        // Check if the user is authenticated (based on your condition)
+        if (success) {
+          // If authenticated, redirect to the homepage
         
-    //     navigate('/'); 
-    //     }
-    // }, [success])
+        navigate('/welcome'); 
+        }
+    }, [success])
 
    
   return (
