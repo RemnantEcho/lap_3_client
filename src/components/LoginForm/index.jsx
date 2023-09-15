@@ -2,15 +2,16 @@ import React, {useRef, useState, useEffect} from 'react'
 import useAuth from '../../hooks/useAuth';
 import axios from '../../api/axios';
 import { Link, useNavigate, useLocation} from 'react-router-dom';
+import { useContext } from 'react';
 
 const LoginForm = () => {
     const { auth, setAuth } = useAuth();
     
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-
     const userRef = useRef();
     const errRef = useRef();
+    const [success, setSuccess] = useContext('');
     const navigate = useNavigate();
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
@@ -66,18 +67,18 @@ const LoginForm = () => {
 
        
     }
-    // useEffect(() => {
-    //     // Check if the user is authenticated (based on your condition)
-    //     if (success) {
-    //       // If authenticated, redirect to the homepage
+    useEffect(() => {
+        // Check if the user is authenticated (based on your condition)
+        if (success) {
+          // If authenticated, redirect to the homepage
         
-    //     navigate('/'); 
-    //     }
-    // }, [success])
+        navigate('/welcome'); 
+        }
+    }, [success])
 
    
   return (
-
+    
    
 
     <section>
