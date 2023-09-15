@@ -198,9 +198,9 @@ const ToDoCard = () => {
                 <p id='text'>Progress: <strong>{item.progressValue}</strong></p>
               </div>
               <div id='actions-cont'>
-                <button id='action-btn' onClick={() => handleDelete(item._id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                <button id='action-btn' onClick={() => openEditOverlay(item)}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                <button id='action-btn' onClick={() => handleComplete(item._id)}><i class="fa fa-check" aria-hidden="true"></i></button>
+                <button id='action-btn' onClick={() => handleDelete(item._id)}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button id='action-btn' onClick={() => openEditOverlay(item)}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button id='action-btn' onClick={() => handleComplete(item._id)}><i className="fa fa-check" aria-hidden="true"></i></button>
               </div>
             </li>
           ))}

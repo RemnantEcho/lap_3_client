@@ -36,23 +36,15 @@ export default function AccountPage() {
   }
 
   const updateAccountInfo = async () => {
-
     try {
-      const options = {
-        method: "PATCH",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "firstName": fName,
-            "lastName": lName,
-            "username": username,
-            "email": email,
-        })
-    }
+      let newBody = {
+        "username": username,
+        "email": email,
+        "firstName": fName,
+        "lastName": lName
+      }
 
-      const response = await axios.get(`http://localhost:3000/users/${auth.id}`, options);
+      const response = await axios.patch(`http://localhost:3000/users/${auth.id}`, newBody);
       if (response.status === 200) {
           // const responseData = response.data.User;
           console.log('Updated Successfully');
