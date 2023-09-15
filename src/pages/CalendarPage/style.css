@@ -1,0 +1,228 @@
+
+#calendar-page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#calendar-main-container {
+    /* padding: 6% 10%; */
+    width: 100%;
+    height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+#calendar-main-container * {
+    line-height: normal;
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 2.75rem;
+    margin: 6px 0;
+    color: #60C77F;
+}
+
+#calendar-year-main {
+    font-size: 2.75rem;
+    margin: 6px 0;
+}
+
+#calendar-month-main {
+    font-size: 2.0rem;
+    margin: 6px 0;
+}
+
+.calendar-main-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+}
+
+.calendar-main-button {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.calendar-main-button:disabled svg path {
+    fill:#ffffff;
+}
+
+.calendar-main-button:disabled:hover svg path {
+    fill:#ffffff;
+}
+
+.calendar-main-button svg path {
+    transition: fill .4s;
+}
+
+.calendar-main-button:hover svg path {
+    fill:#60C77F;
+}
+
+.calendar-main-horizontal-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.calendar-main-heading {
+    cursor: pointer;
+    transition: color .4s;
+    width: 160px;
+}
+
+.calendar-main-heading:hover {
+    color: #60C77F;
+}
+
+.day-button-link {
+    margin: 12px;
+    text-decoration: none;
+    flex: 0 0 10.5%;
+}
+
+.calendar-day-button {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: background-color .4s, color .2s;
+    text-decoration: none;
+
+}
+
+.day-button-day-text {
+    font-size: 1.0rem;
+}
+
+.calendar-day-button:hover {
+    background-color: #60C77F;
+    /* color: #fff; */
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid black; */
+}
+
+#calendar-day-list {
+    padding: 5%;
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    /* height: 50%; */
+    margin-bottom: 0;
+}
+
+#calendar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar-overlay-container {
+    padding: 1% 3% 4% 3%;
+    background-color: #fff;
+    min-height: 250px;
+    min-width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+#calendar-overlay-top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-top-button {
+    cursor: pointer;
+    transition: background-color .4s;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 12px;
+}
+
+.calendar-top-button:hover {
+    color: #60C77F;
+}
+
+.calendar-overlay-month-button {
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    min-height: 60px;
+    min-width: 80px;
+}
+
+.calendar-overlay-month-button:hover {
+    color:#60C77F;
+}
+
+.calendar-overlay-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+
+#calendar-overlay-close-button {
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#calendar-overlay-close-button svg {
+    width: 25px;
+    height: 25px;
+}
+
+#calendar-overlay-close-button:hover svg path {
+    fill: #60C77F;
+}
+
+#calendar-bottom-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar-view-all-button {
+    width: 160px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #60C77F;
+    color: black;
+    font-size: 1.5rem;
+    transition: background-color .4s;
+}
+
+#calendar-view-all-button:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}

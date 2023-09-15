@@ -1,0 +1,31 @@
+#notFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75vw;
+    height: 100vh;
+}
+
+#not-found-text {
+    margin-bottom: 70px;
+}
+
+#home-btn {
+    width: 160px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #60C77F;
+    transition: background-color .4s;
+}
+
+#home-link {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#home-btn:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}

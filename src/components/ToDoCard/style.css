@@ -1,0 +1,218 @@
+#cards-cont {
+    /* background-color: aqua; */
+    height: 400px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    padding-right: 4rem;
+    /* margin-right: 5px; */
+}
+
+/* #small-cont {
+    background-color: beige;
+} */
+#content-cont {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: space-evenly;
+    height: 12rem;
+    padding-left: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+
+#actions-cont {
+    /* background-color: azure; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
+    width: 300px;
+    padding-right: 20px;
+
+}
+
+#content {
+    /* background-color: red; */
+    margin-bottom: 20px;
+    display: flex;
+    width: 50rem;
+    height: 15rem;
+    justify-content: space-between;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 20px;
+    background: transparent;
+}
+
+#goal {
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+#text {
+    font-size: 1rem;
+    padding: 0;
+}
+
+#action-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #60C77F;
+    border: 1px solid black; 
+}
+
+#action-btn:hover, #overlay-btn:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#overlay {
+    /* display: none;  */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    /* display: flex; */
+}
+
+#edit-overlay-content, #add-overlay-content {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-evenly; */
+}
+
+#input-container {
+    /* background-color: #60C77F; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    justify-content: space-around;
+}
+
+
+#edit-input {
+    /* background-color: blue; */
+    height: 40px;
+    width: 18rem;
+    /* background-color: #d0f8dc; */
+    border: 3px solid #757575;
+    border-radius: 2px;
+    font-size: 1rem;
+    padding: 0 6px;
+    /* padding-right: 2.5rem; */
+    cursor: auto;
+    outline: none;
+}
+
+#edit-input:focus {
+    border: 3px solid #60C77F;
+}
+
+#buttons-cont {
+    /* background-color: aqua; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    width: 18rem;
+    margin-top: 1rem;
+}
+
+#overlay-btn {
+    width: 5rem;
+    height: 40px;
+    background-color: #60C77F;
+    border: 1px solid black; 
+    font-size: 1rem;
+}
+
+
+#add-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+#new-btn-cont {
+    /* background-color: #60C77F; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+#new-btn {
+    width: 160px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #60C77F;
+    transition: background-color .4s;
+    font-size: 1.5rem;
+}
+
+#new-btn:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* .add-overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+} */
+
+
+/* .add-overlay-content input[type="text"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+} */
+
+/* #buttons-cont {
+    text-align: center;
+    margin-top: 20px;
+} */
+
+/* #overlay-btn {
+    margin-right: 10px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+#overlay-btn:last-child {
+    margin-right: 0;
+    background-color: #dc3545;
+} */
+

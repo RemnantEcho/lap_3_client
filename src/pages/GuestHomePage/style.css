@@ -1,0 +1,45 @@
+#guest-signup-button {
+    height: 48px;
+}
+
+#guest-login-button {
+    width: 180px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    transition: background-color .4s;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#guest-login-button:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    background-color: #d0f8dc;
+}
+
+
+#guest-signup-button {
+    width: 180px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #60C77F;
+    transition: background-color .4s;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+#guest-signup-button:hover {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    background-color: #d0f8dc;
+}
+
+
+#bg-image {
+    position: absolute;
+    width: 50%;
+    z-index: -1;
+    opacity: 0.2;
+}
