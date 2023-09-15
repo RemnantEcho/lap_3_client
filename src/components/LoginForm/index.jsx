@@ -11,7 +11,6 @@ const LoginForm = () => {
     const from = location.state?.from?.pathname || "/";
     const userRef = useRef();
     const errRef = useRef();
-    const [success, setSuccess] = useContext('');
     const navigate = useNavigate();
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
@@ -44,12 +43,18 @@ const LoginForm = () => {
             const id = response.data.id;
             console.log(accessToken)
 
-            // need to check these two lines
-            await setAuth({user, pwd, accessToken, id})
-            setUser('');
-            setPwd('');
-            console.log(auth);
-            navigate(from, {replace: true});
+            if (response.status === 200) {
+                // need to check these two lines
+                await setAuth({user, pwd, accessToken, id})
+                setUser('');
+                setPwd('');
+                console.log(auth);
+                navigate(from, {replace: true});
+            }
+            else {
+                throw response.status
+            }
+            
         }
 
         catch (err) {
@@ -67,15 +72,6 @@ const LoginForm = () => {
 
        
     }
-    useEffect(() => {
-        // Check if the user is authenticated (based on your condition)
-        if (success) {
-          // If authenticated, redirect to the homepage
-        
-        navigate('/welcome'); 
-        }
-    }, [success])
-
    
   return (
     

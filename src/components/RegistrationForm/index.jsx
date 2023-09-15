@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ const RegistrationForm = () => {
         password: '',
         regDate: ''
     })
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -31,13 +32,13 @@ const RegistrationForm = () => {
             regDate: new Date(),
           };
 
-       
-
-          
-
    
         axios.post('http://localhost:3000/users/register', registrationData).then((response) => {
             console.log("thank u for registering", response.status)
+            if (response.status === 201) {
+              navigate('/login');
+            }
+            
         });
       
 } 
