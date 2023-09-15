@@ -208,17 +208,19 @@
 #calendar-bottom-bar {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #calendar-view-all-button {
-    width: 180px;
-    height: 70px;
+    width: 160px;
+    height: 60px;
     border: 1px solid black;
     border-radius: 2px;
     background-color: #60C77F;
     color: black;
     font-size: 1.5rem;
-    transition: background-color .4s, box-shadow .4s;
+    transition: background-color .4s;
 }
 
 #calendar-view-all-button:hover {

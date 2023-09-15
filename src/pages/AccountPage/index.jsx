@@ -245,6 +245,7 @@ export default function AccountPage() {
 
       </div>
     </div>
+    <img id='bg-image-small' src="bg-image.png" alt="logo" />
     </>
 
     

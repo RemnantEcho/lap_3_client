@@ -62,21 +62,24 @@ function Search({ onShowToDoCard, onHideToDoCard, onSearchResults, resetSearchin
     return (
         <div className='search-cont'>
             <div>
+              <form>
+
                 <label id='search-form'>
                     <input
-                        id='form'
+                        id='search-form-input'
                         type='text'
                         value={inputText}
                         onChange={handleInputChange}
                         placeholder='Search for a task...'
-                    />
+                        />
                     {inputText && (
-          <button id='clear-button' onClick={handleClearClick}>
+                      <button id='clear-button' onClick={handleClearClick}>
             X
           </button>
         )}
                 </label>
                 <button id='submit-btn' onClick={handleButtonClick}>Submit</button>
+        </form>
             </div>
         </div>
     );

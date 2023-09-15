@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, ToDoCard } from '../../components';
 import './style.css';
+import axios from 'axios';
 
 export default function TodoPage() {
   const [showToDoCard, setShowToDoCard] = useState(true);
@@ -33,6 +34,7 @@ export default function TodoPage() {
     setSearching(false);
   };
 
+
   return (
     <div id='todo-page'>
       <div id='todo-title'>
@@ -41,8 +43,7 @@ export default function TodoPage() {
 
       <div id='search'>
         <div id='date-cont'>
-          <h2>Date</h2>
-          <h2>Month</h2>
+          <h3> View all your tasks </h3>
         </div>
         <Search onShowToDoCard={handleShowToDoCard} onHideToDoCard={handleHideToDoCard} onSearchResults={handleSearchResults} resetSearching={resetSearching} />
       </div>
@@ -68,6 +69,7 @@ export default function TodoPage() {
           <h3>Nothing to show!</h3>
         )}
       </div>
+      <img id='bg-image-small' src="bg-image.png" alt="logo" />
     </div>
   );
 }

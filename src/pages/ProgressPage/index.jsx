@@ -9,6 +9,7 @@ export default function ProgressPage() {
     <h1 id="progress_title">PROGRESS</h1>
     <GetProgress/>
     </div>
+    <img id='bg-image-small' src="bg-image.png" alt="logo" />
     </>
   )
 }

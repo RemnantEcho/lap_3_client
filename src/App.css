@@ -51,7 +51,7 @@ main {
     background-color: #60C77F;
     color: black;
     font-size: 1.5rem;
-    transition: background-color .4s, box-shadow .4s;
+    /* transition: background-color .4s, box-shadow .4s; */
     cursor: pointer;
 } 
 
@@ -65,7 +65,7 @@ main {
 }
 
 .green-button:hover {
-    background-color: #4c9f65;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2)
 }
 
 .push-right {
